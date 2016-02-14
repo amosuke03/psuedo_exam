@@ -2,8 +2,8 @@
     <fieldset>
         <legend>メモの編集</legend>
 
-        <input type="text" placeholder="タイトル" value="<%= @memo.title %>">
-        <input type="text" placeholder="内容" value="<%= @memo.content %>">
+        <input type="text" placeholder="タイトル" name="title" value="<%= @memo.title %>">
+        <input type="text" placeholder="内容" name="content" value="<%= @memo.content %>">
 
         <label for="categories">カテゴリ</label>
         <select id="categories" name="category">
