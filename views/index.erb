@@ -1,14 +1,10 @@
-<form class="pure-form">
+<form class="pure-form" action="/create" method ="post">
   <fieldset>
     <legend>新しいメモを追加</legend>
-
-  <form action="/create" method ="post">
     <label for="title">タイトル</label>
       <input type="text" name="title" id="title" placeholder="タイトル">
-    <label for="price">内容</label>
+    <label for="content">内容</label>
       <input type="text" name="content" id="content" placeholder="内容">
-
-</form>
     <label for="categories">カテゴリ</label>
     <select id="categories">
       <option></option>
@@ -22,7 +18,9 @@
   <div class="ui card">
     <div class="content">
       <div class="header">
-        <メモ1のタイトル>
+        
+    <% @memos.each do |memo| %>
+        <%= memo.title %>
       </div>
       <div class="meta">
         <メモ1のカテゴリ>
@@ -30,14 +28,23 @@
     </div>
     <div class="content">
       <div class="description">
-        <メモ1の内容>
+        <%= memo.content %>
       </div>
     </div>
     <div class="extra content">
-      <button class="ui button"><a href="#">Edit</a></button>
-      <button class="ui button"><a href="#">Delete</a></button>
+      <span>
+        <form action="/delete/<%= memo.id %>" mothod="post">
+          <input type="submit" value="削除">
+        </form>
+      </span>
+      <span>
+        <form action="/edit/<%= memo.id %>" mothod="post">
+          <input type="submit" value="編集">
+        </form>
+      </span>
     </div>
   </div>
+  <% end %>
   <div class="ui card">
     <div class="content">
       <div class="header">
