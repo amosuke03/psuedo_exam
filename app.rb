@@ -29,15 +29,16 @@ get '/delete/:id' do
 end
 
 get '/edit/:id' do
-    @memo = Memo.find(params[:id])
+    @memo =Memo.find(params[:id])
     erb :edit
 end
 
+
 post '/renew/:id' do
     @memo = Memo.find(params[:id])
-    @memo.update({
+    @memo.update(
         title: params[:title],
         content: params[:content]
-    })
+    )
     redirect '/'
 end
