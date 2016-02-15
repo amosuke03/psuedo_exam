@@ -6,20 +6,20 @@
     <label for="content">内容</label>
       <input type="text" name="content" id="content" placeholder="内容">
     <label for="categories">カテゴリ</label>
-    <select id="categories">
-      <option></option>
+    <select name="category" id="category">
+      <% @categories.each do |category| %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+    <% end %>
     </select>
 
     <button type="submit" class="pure-button pure-button-primary">追加</button>
   </fieldset>
 </form>
-
+    <% @memos.each do |memo| %>
 <div class="ui cards">
   <div class="ui card">
     <div class="content">
       <div class="header">
-        
-    <% @memos.each do |memo| %>
         <%= memo.title %>
       </div>
       <div class="meta">
@@ -45,42 +45,42 @@
     </div>
   </div>
   <% end %>
-  <div class="ui card">
-    <div class="content">
-      <div class="header">
-        <メモ2のタイトル>
-      </div>
-      <div class="meta">
-        <メモ2のカテゴリ>
-      </div>
-    </div>
-    <div class="content">
-      <div class="description">
-        <メモ2の内容>
-      </div>
-    </div>
-    <div class="extra content">
-      <button class="ui button"><a href="#">Edit</a></button>
-      <button class="ui button"><a href="#">Delete</a></button>
-    </div>
-  </div>
-  <div class="ui card">
-    <div class="content">
-      <div class="header">
-        <メモ3のタイトル>
-      </div>
-      <div class="meta">
-        <メモ3のカテゴリ>
-      </div>
-    </div>
-    <div class="content">
-      <div class="description">
-        <メモ3の内容>
-      </div>
-    </div>
-    <div class="extra content">
-      <button class="ui button"><a href="#">Edit</a></button>
-      <button class="ui button"><a href="#">Delete</a></button>
-    </div>
-  </div>
-</div>
+<!--  <div class="ui card">-->
+<!--    <div class="content">-->
+<!--      <div class="header">-->
+<!--        <メモ2のタイトル>-->
+<!--      </div>-->
+<!--      <div class="meta">-->
+<!--        <メモ2のカテゴリ>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="content">-->
+<!--      <div class="description">-->
+<!--        <メモ2の内容>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="extra content">-->
+<!--      <button class="ui button"><a href="#">Edit</a></button>-->
+<!--      <button class="ui button"><a href="#">Delete</a></button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="ui card">-->
+<!--    <div class="content">-->
+<!--      <div class="header">-->
+<!--        <メモ3のタイトル>-->
+<!--      </div>-->
+<!--      <div class="meta">-->
+<!--        <メモ3のカテゴリ>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="content">-->
+<!--      <div class="description">-->
+<!--        <メモ3の内容>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="extra content">-->
+<!--      <button class="ui button"><a href="#">Edit</a></button>-->
+<!--      <button class="ui button"><a href="#">Delete</a></button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

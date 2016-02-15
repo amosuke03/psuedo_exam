@@ -11,14 +11,15 @@ end
 
 get '/' do
     @memos = Memo.all
+    @categories = Category.all
     erb :index
 end
 
 post '/create' do
         Memo.create(
         title: params[:title],
-        content: params[:content]
-        # category_id: params[:category]
+        content: params[:content],
+        category_id: params[:category]
     )
     redirect '/'
 end
@@ -42,3 +43,11 @@ post '/renew/:id' do
     )
     redirect '/'
 end
+
+get '/category/:id' do
+   @categories    =Category.all
+   @category      =Category.find(params[:id])
+   @category_name =@category.name
+   @memos         =@category.mamos
+   erb :index
+   end
