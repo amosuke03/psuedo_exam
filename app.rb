@@ -6,7 +6,7 @@ require './models'
 
 before do
     @my_name = '<amosuke>'
-    # @categories = Category.all
+    @categories = Category.all
 end
 
 get '/' do
@@ -48,6 +48,6 @@ get '/category/:id' do
    @categories    =Category.all
    @category      =Category.find(params[:id])
    @category_name =@category.name
-   @memos         =@category.mamos
+   @memos         =@category.memos
    erb :index
    end

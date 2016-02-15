@@ -15,6 +15,14 @@
     <button type="submit" class="pure-button pure-button-primary">追加</button>
   </fieldset>
 </form>
+<!--<ul>-->
+<!--  <% @categories.each do |category| %>-->
+<!--  <li><a href="/category/<%= category.id %>"><%= category.name %></a> </li>-->
+<!--  <% end %>-->
+<!--  </ul>-->
+  <% if @category_name.present? %>
+  <h2><%= @category_name %></h2>
+  <% end %>
     <% @memos.each do |memo| %>
 <div class="ui cards">
   <div class="ui card">
@@ -23,7 +31,7 @@
         <%= memo.title %>
       </div>
       <div class="meta">
-        <メモ1のカテゴリ>
+        <%= memo.category %>
       </div>
     </div>
     <div class="content">
@@ -45,42 +53,3 @@
     </div>
   </div>
   <% end %>
-<!--  <div class="ui card">-->
-<!--    <div class="content">-->
-<!--      <div class="header">-->
-<!--        <メモ2のタイトル>-->
-<!--      </div>-->
-<!--      <div class="meta">-->
-<!--        <メモ2のカテゴリ>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="content">-->
-<!--      <div class="description">-->
-<!--        <メモ2の内容>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="extra content">-->
-<!--      <button class="ui button"><a href="#">Edit</a></button>-->
-<!--      <button class="ui button"><a href="#">Delete</a></button>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="ui card">-->
-<!--    <div class="content">-->
-<!--      <div class="header">-->
-<!--        <メモ3のタイトル>-->
-<!--      </div>-->
-<!--      <div class="meta">-->
-<!--        <メモ3のカテゴリ>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="content">-->
-<!--      <div class="description">-->
-<!--        <メモ3の内容>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="extra content">-->
-<!--      <button class="ui button"><a href="#">Edit</a></button>-->
-<!--      <button class="ui button"><a href="#">Delete</a></button>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
