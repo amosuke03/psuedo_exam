@@ -23,7 +23,9 @@
   <% if @category_name.present? %>
   <h2><%= @category_name %></h2>
   <% end %>
+  <ol>
     <% @memos.each do |memo| %>
+    <li>
 <div class="ui cards">
   <div class="ui card">
     <div class="content">
@@ -52,4 +54,6 @@
       </span>
     </div>
   </div>
+  </li>
   <% end %>
+</ol>
