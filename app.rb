@@ -39,7 +39,8 @@ post '/renew/:id' do
     @memo = Memo.find(params[:id])
     @memo.update(
         title: params[:title],
-        content: params[:content]
+        content: params[:content],
+        category_id: params[:category]
     )
     redirect '/'
 end
